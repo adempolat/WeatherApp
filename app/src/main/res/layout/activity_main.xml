@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/weathers"
+    android:background="@drawable/weatherss"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,8 +14,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
         android:layout_weight="1"
-        android:padding="10dp"
         android:background="@drawable/rounder_corner"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
