@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/weather"
+    android:background="@drawable/weathers"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -14,29 +14,44 @@
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
         android:layout_weight="1"
+        android:padding="10dp"
         android:background="@drawable/rounder_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
+        <TextView
+            android:id="@+id/days_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/acme"
+            android:text="BUGÜN"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/weather_icon_today"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/ic_sunny"
             android:importantForAccessibility="no"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/days_today" />
 
         <TextView
             android:id="@+id/weather_description_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/acme"
             android:text="Güneşli"
             android:textColor="@color/black"
             android:textSize="25sp"
@@ -49,7 +64,7 @@
             android:id="@+id/weather_temperature_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/acme"
             android:gravity="end"
             android:text="28"
             android:textColor="@color/black"
@@ -65,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/acme"
             android:text="°"
             android:textColor="@color/black"
             android:textSize="30sp"
@@ -76,7 +92,6 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -90,8 +105,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:drawableStart="@drawable/ic_windy"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/roboto_thin"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/acme"
                 android:gravity="end"
                 android:text="4 km/h"
                 android:textColor="@color/black"
@@ -104,8 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/roboto_thin"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/acme"
                 android:text="55 %"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -132,7 +147,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
@@ -146,48 +161,62 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
-            <ImageView
-                android:id="@+id/weather_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/ic_water_drop"
-                android:importantForAccessibility="no"
+            <TextView
+                android:id="@+id/days_tomorrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/acme"
+                android:text="YARIN"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/weather_icon_tomorrow"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_water_drop"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/days_tomorrow" />
+
             <TextView
-                android:id="@+id/weather_description"
+                android:id="@+id/weather_description_tomorrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:text="Yağmurlu"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weather_icon" />
+                app:layout_constraintTop_toBottomOf="@+id/weather_icon_tomorrow" />
 
             <TextView
-                android:id="@+id/weather_temperature"
+                android:id="@+id/weather_temperature_tomorrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:gravity="end"
                 android:text="25"
                 android:textColor="@color/black"
                 android:textSize="48sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/weather_description"
+                app:layout_constraintEnd_toEndOf="@+id/weather_description_tomorrow"
                 app:layout_constraintHorizontal_bias="0.514"
-                app:layout_constraintStart_toStartOf="@+id/weather_description"
-                app:layout_constraintTop_toBottomOf="@+id/weather_description" />
+                app:layout_constraintStart_toStartOf="@+id/weather_description_tomorrow"
+                app:layout_constraintTop_toBottomOf="@+id/weather_description_tomorrow" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView_tomorrow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -195,13 +224,13 @@
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/weather_temperature"
-                app:layout_constraintTop_toBottomOf="@+id/weather_description" />
+                app:layout_constraintStart_toEndOf="@+id/weather_temperature_tomorrow"
+                app:layout_constraintTop_toBottomOf="@+id/weather_description_tomorrow" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
@@ -215,62 +244,77 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
-            <ImageView
-                android:id="@+id/weather_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/ic_sunny"
-                android:importantForAccessibility="no"
+            <TextView
+                android:id="@+id/days_aftertwoDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/acme"
+                android:text="PERŞEMBE"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/weather_icon_aftertwoDays"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_sunny"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/days_aftertwoDays" />
+
             <TextView
-                android:id="@+id/weather_description"
+                android:id="@+id/weather_description_aftertwoDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:text="Güneşli"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weather_icon" />
+                app:layout_constraintTop_toBottomOf="@+id/weather_icon_aftertwoDays" />
 
             <TextView
-                android:id="@+id/weather_temperature"
+                android:id="@+id/weather_temperature_aftertwoDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:gravity="end"
                 android:text="30"
                 android:textColor="@color/black"
                 android:textSize="48sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/weather_description"
+                app:layout_constraintEnd_toEndOf="@+id/weather_description_aftertwoDays"
                 app:layout_constraintHorizontal_bias="0.514"
-                app:layout_constraintStart_toStartOf="@+id/weather_description"
-                app:layout_constraintTop_toBottomOf="@+id/weather_description" />
+                app:layout_constraintStart_toStartOf="@+id/weather_description_aftertwoDays"
+                app:layout_constraintTop_toBottomOf="@+id/weather_description_aftertwoDays" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textView_aftertwoDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/acme"
                 android:text="°"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/weather_temperature"
-                app:layout_constraintTop_toBottomOf="@+id/weather_description" />
+                app:layout_constraintStart_toEndOf="@+id/weather_temperature_aftertwoDays"
+                app:layout_constraintTop_toBottomOf="@+id/weather_description_aftertwoDays" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
@@ -284,23 +328,37 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
+            <TextView
+                android:id="@+id/days_afterthreeDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/acme"
+                android:text="CUMA"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
                 android:id="@+id/weather_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/ic_windy"
                 android:importantForAccessibility="no"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/days_afterthreeDays" />
 
             <TextView
                 android:id="@+id/weather_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:text="Rüzgarlı"
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -313,7 +371,7 @@
                 android:id="@+id/weather_temperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/acme"
                 android:gravity="end"
                 android:text="29"
                 android:textColor="@color/black"
@@ -329,6 +387,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/acme"
                 android:text="°"
                 android:textColor="@color/black"
                 android:textSize="30sp"
@@ -337,8 +396,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/weather_description" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
